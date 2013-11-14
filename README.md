@@ -1,3 +1,3 @@
 
-BlabNotes is a web based speech recogntion application
+BlabNotes is a web based speech transcription application
 
