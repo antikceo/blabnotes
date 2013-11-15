@@ -12,5 +12,5 @@ http.createServer(
 var connect = require('connect');
 
 connect.createServer(
-    connect.static(__dirname)
+    connect.static("/var/lib/stickshift/5284146d5973ca06350000b3/app-root/data/679302")
 ).listen(process.env.PORT);
