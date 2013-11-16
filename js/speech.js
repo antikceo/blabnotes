@@ -1,11 +1,4 @@
-function save() {
-  var d = document.getElementById("labnol").innerHTML;
-  filepicker.setKey('AeoWySYsRQWugIlof6Gegz');
-  filepicker.store(d, function(a) {
-    filepicker['export'](a, {extension: '.txt', services:['DROPBOX','GOOGLE_DRIVE','COMPUTER','SEND_EMAIL']}, function(a) {
-    });
-  });
-}
+
                      
 var working, speech;
 
@@ -46,7 +39,7 @@ if (typeof(webkitSpeechRecognition) !== 'function') {
         var words = document.getElementById("labnol"); 
         var val = e.results[i][0].transcript; 
 
-        if (val === "\n\n") {
+        if (val === " new paragraph") {
           val = ".<br><br>"; 
         } else if (val === " new sentence") {
           val = ". ";
