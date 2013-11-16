@@ -7,10 +7,31 @@ http.createServer(
         res.end('Hello World\n');
     }
 ).listen(process.env.PORT);
-*/
+
 
 var connect = require('connect');
 
 connect.createServer(
-    connect.static("/var/lib/stickshift/5284146d5973ca06350000b3/app-root/data/679302")
+    connect.static(__dirname)
 ).listen(process.env.PORT);
+
+
+
+var express = require('express');
+var app = express();
+
+app.use(express.static(__dirname));
+
+app.listen(process.env.PORT);
+
+*/
+
+var express = require('express'),
+    app = express();
+
+//app.use(express.logger());
+
+app.use(express.static(__dirname));
+
+app.listen(process.env.PORT);
+console.log('Express server started on port %s', process.env.PORT);
