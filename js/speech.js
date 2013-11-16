@@ -45,10 +45,10 @@ if (typeof(webkitSpeechRecognition) !== 'function') {
           val = ". ";
         } else if (val === " stop listening") {
           val = ". "; action();
-        } else if (val === " insert  comma") {
-          val = ". "; action();
+        } else if (val === " insert  pause") {
+          val = "? "; action();
         } else if (val === " insert exclamation") {
-          val = ". "; action();
+          val = "! "; action();
         } 
         
         if (words.innerHTML.substr(-2) === ". ") {
