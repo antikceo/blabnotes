@@ -3,7 +3,7 @@
 var working, speech;
 
 if (typeof(webkitSpeechRecognition) !== 'function') {  
-  document.getElementById("labnol").innerHTML = "We are sorry but Dictation requires the latest version of Google Chrome on your desktop.";
+  document.getElementById("labnol").innerHTML = "Sorry but Blabnoes only works in the latest version of Google Chrome.";
   document.getElementById("messages").style.display = "none";
 } else {
 
@@ -40,7 +40,7 @@ if (typeof(webkitSpeechRecognition) !== 'function') {
         var val = e.results[i][0].transcript; 
 
         if (val === " new paragraph") {
-          val = ".<br><br>"; 
+          val = ".<br><br> "; 
         } else if (val === " new sentence") {
           val = ". ";
         } else if (val === " stop listening") {
@@ -94,7 +94,7 @@ function clearSlate() {
 function reset() {
   working = false; 
   document.getElementById("status").style.display="none"; 
-  document.getElementById("btn").innerHTML = "Start Dictation";  
+  document.getElementById("btn").innerHTML = "Begin Transcription";  
 }
 
 function action() {
@@ -104,7 +104,7 @@ function action() {
   } else {
     speech.start(); 
     working = true; 
-    document.getElementById("btn").innerHTML = "Stop Listening"; 
+    document.getElementById("btn").innerHTML = "End Transcription"; 
   } 
 }
 

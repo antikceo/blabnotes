@@ -1,8 +1,5 @@
-
 var express = require('express'),
     app = express();
-
-//app.use(express.logger());
 
 app.use(express.static(__dirname));
 
