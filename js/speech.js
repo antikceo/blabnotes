@@ -3,7 +3,7 @@
 var working, speech;
 
 if (typeof(webkitSpeechRecognition) !== 'function') {  
-  document.getElementById("labnol").innerHTML = "Sorry but Blabnoes only works in the latest version of Google Chrome.";
+  document.getElementById("labnol").innerHTML = "Sorry but Blabnotes only works in the latest version of Google Chrome.";
   document.getElementById("messages").style.display = "none";
 } else {
 
@@ -24,7 +24,7 @@ if (typeof(webkitSpeechRecognition) !== 'function') {
     } else if ( e.error === 'audio-capture' ) {
       msg = "Please ensure that a microphone is connected to your computer."; 
     } else if ( e.error === 'not-allowed' ) {
-      msg = "The app cannot access your microphone. Please go to chrome://settings/contentExceptions#media-stream and allow Microphone access to this website."; 
+      msg = "Blabnotes cannot access your microphone. Please go to chrome://settings/contentExceptions#media-stream and allow Microphone access to this website."; 
     } 
     document.getElementById("warning").innerHTML = "<p>" + msg + "</p>"; 
     setTimeout(function() {
