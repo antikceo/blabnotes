@@ -1,28 +1,52 @@
-
 <!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <meta charset="utf-8">
-            <title>Blabnotes</title>
-            <link href="css/styles.css" rel="stylesheet">
-        </head>
+<head>
+    <meta charset="utf-8">
+    <title>Blabnotes</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="center" id="headline">Blabnotes Transcription with Google Web Speech API</h1>
+        <div id="info"></div>
+        </div>
+        <div class="span4">
+            <h3 align="center">Custom Commands</h3>
+            <p align="center">Say <b>"New Line"</b> for new line</p>
+            <p align="center">Say <b>"End Sentence"</b> to insert '.'</p>
+            <p align="center">Say <b>"Question Mark"</b> to insert '?'</p>
+        </div>
+        <div class="span10">
+            <button align="center" id="start_button" onclick="startButton(event)">
+            <img id="start_img" src="mic.gif" alt="Start"></button>
+        </div>
+        <div class="span4">
+        </div>
+        <div id="results" class="span10">
+          <span id="final_span" class="final"></span>
+          <span id="interim_span" class="interim"></span>
+          <p>
+        </div>
+        <div class="center">
+          <div class="sidebyside" style="text-align:right">
+            <button id="copy_button" class="button" onclick="stopButton(event)">
+              Stop Listening</button>
+          </div>
+          <div class="sidebyside">
+            <button id="email_button" class="button" onclick="emailButton()">
+              Export (Coming Soon)</button>
+            <div id="email_info" class="info">
+              Text sent to default email application.<br>
+              (See chrome://settings/handlers to change.)
+            </div>
+          </div>
+          <p>
+          <div id="div_language">
+            <select id="select_language" onchange="updateCountry()"></select>
+            &nbsp;&nbsp;
+            <select id="select_dialect"></select>
+          </div>
+        </div>
         
-        <body>
-            <div class="notepad"> 
-                <div id="speech"> 
-                    <span id="labnol" contenteditable="true">Click the Start button and dicatate.</span> 
-                    <span id="notfinal"></span> 
-                    <span id="warning"></span> 
-                </div>   
-                <div class="whatisthis"> 
-                    <span id="status"><img src="http://hundredzeros.com/listen.gif" /></span> 
-                    <span id="messages"> 
-                    <a href="#" onclick="javascript:action();return false;" id="btn">Click to Start Speaking</a> 
-                    <a href="#" onclick="javascript:clearSlate();return false;" id="btnClear">Clear</a>             
-                    </span> 
-                </div> 
-                </div>
-            <script src="js/speech.js"></script>
-        </body>
-        
-</html>
+        <script src="js/speech.js"></script>
+
+</body>
