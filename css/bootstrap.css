@@ -310,6 +310,8 @@ a:focus {
 .span10 {
   width: 780px;
   text-align: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .span9 {

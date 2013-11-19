@@ -9,15 +9,20 @@
     <h1 class="center" id="headline">Blabnotes Transcription with Google Web Speech API</h1>
         <div id="info"></div>
         </div>
+        
         <div class="span4">
             <h3 align="center">Custom Commands</h3>
             <p align="center">Say <b>"New Line"</b> for new line</p>
             <p align="center">Say <b>"End Sentence"</b> to insert '.'</p>
             <p align="center">Say <b>"Question Mark"</b> to insert '?'</p>
         </div>
-        <div class="span10">
+        <div id="div_language" class="span10">
             <button align="center" id="start_button" onclick="startButton(event)">
             <img id="start_img" src="mic.gif" alt="Start"></button>
+            <select id="select_language" onchange="updateCountry()"></select>
+            &nbsp;&nbsp;
+            <select id="select_dialect"></select>
+        </div>
         </div>
         <div class="span4">
         </div>
@@ -40,12 +45,6 @@
             </div>
           </div>
           <p>
-          <div id="div_language">
-            <select id="select_language" onchange="updateCountry()"></select>
-            &nbsp;&nbsp;
-            <select id="select_dialect"></select>
-          </div>
-        </div>
         
         <div class="footer">
             <p align="center">Built by Tikue Anazodo</p></p>
