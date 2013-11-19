@@ -69,7 +69,7 @@ for (var i = 0; i < langs.length; i++) {
 select_language.selectedIndex = 6;
 updateCountry();
 select_dialect.selectedIndex = 6;
-document.getElementById("info").innerHTML = "Click To Begin Dictation.";
+document.getElementById("info").innerHTML = "Click Microphone To Begin Dictation.";
 
 function updateCountry() {
   for (var i = select_dialect.options.length - 1; i >= 0; i--) {
