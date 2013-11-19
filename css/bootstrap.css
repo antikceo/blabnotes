@@ -7088,7 +7088,7 @@ a.badge:focus {
     border: 1px solid #ddd;
     padding: 15px;
     text-align: left;
-    min-height: 150px;
+    min-height: 450px;
   }
   #start_button {
     border: 0;
