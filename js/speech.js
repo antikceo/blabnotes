@@ -69,7 +69,7 @@ for (var i = 0; i < langs.length; i++) {
 select_language.selectedIndex = 6;
 updateCountry();
 select_dialect.selectedIndex = 6;
-document.getElementById("info").innerHTML = "Click Microphone To Begin Dictation.";
+document.getElementById("info").innerHTML = "Click Microphone To Begin Dictation. (Only works in Chrome 25+)";
 
 function updateCountry() {
   for (var i = select_dialect.options.length - 1; i >= 0; i--) {
@@ -97,7 +97,7 @@ if (!('webkitSpeechRecognition' in window)) {
 
   recognition.onstart = function() {
     recognizing = true;
-    document.getElementById("info").innerHTML = "Speak Now.";
+    document.getElementById("info").innerHTML = "Begin Speaking...";
     start_img.src = 'mic-animate.gif';
   };
 
@@ -149,7 +149,19 @@ if (!('webkitSpeechRecognition' in window)) {
     var interim_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
-        final_transcript += event.results[i][0].transcript;
+        var words = event.results[i][0].transcript;
+        
+        //create custom commands
+        if (words == " insert paragraph") {
+            words = ".<br><br>"
+        }else if (words == " new sentence") {
+            words = "."
+        }else {
+            //No commands reconized ... do nothing, leave strings as is
+        }
+        
+        final_transcript += words;
+        
       } else {
         interim_transcript += event.results[i][0].transcript;
       }
@@ -163,6 +175,7 @@ if (!('webkitSpeechRecognition' in window)) {
   };
 }
 
+   
 function upgrade() {
   start_button.style.visibility = 'hidden';
   showInfo('info_upgrade');
@@ -217,7 +230,7 @@ function startButton(event) {
     recognition.stop();
     return;
   }
-  final_transcript = '';
+  final_transcript += ' ';
   recognition.lang = select_dialect.value;
   recognition.start();
   ignore_onend = false;

@@ -6,12 +6,19 @@
 </head>
 
 <body>
-    <h1 class="center" id="headline">Blabnotes Transcription with Google Web Speech API</h1>
-        <div class="span4">
+        <div class="spanfull">
+            <h1 id="headline" >Blabnotes Transcription with Google Web Speech API</h1>
         </div>
-        <div id="info" class="span10"></div>
+        <div id="info" class="spanfull"></div>
         </div>
-        
+        <div id="div_language" class="spanfull">
+            
+            <select id="select_language" onchange="updateCountry()"></select>
+            &nbsp;&nbsp;
+            <select id="select_dialect"></select>
+            <button align="center" id="start_button" onclick="startButton(event)">
+            <img id="start_img" src="mic.gif" alt="Start"></button>
+        </div><br>
         <div class="span4">
             <h3 align="center">Custom Commands</h3>
             <p align="center">Say <b>"New Line"</b> for new line</p>
@@ -19,16 +26,7 @@
             <p align="center">Say <b>"Question Mark"</b> to insert '?'</p>
             <p align="center">More to come...</p>
         </div>
-        <div id="div_language" class="span10">
-            
-            <select id="select_language" onchange="updateCountry()"></select>
-            &nbsp;&nbsp;
-            <select id="select_dialect"></select>
-            <button align="center" id="start_button" onclick="startButton(event)">
-            <img id="start_img" src="mic.gif" alt="Start"></button>
-        </div>
-        </div>
-        <div class="span4">
+
         </div>
         <div id="results" class="paper">
           <span id="final_span" class="final"></span>
@@ -41,12 +39,9 @@
               Stop Listening</button>
           </div>
           <div class="sidebyside">
-            <button id="email_button" class="button" onclick="emailButton()">
-              Export (Coming Soon)</button>
-            <div id="email_info" class="info">
-              Text sent to default email application.<br>
-              (See chrome://settings/handlers to change.)
-            </div>
+            <button id="email_button" class="button">
+              Export (Coming Soon)
+            </button>
           </div>
           <p>
         
