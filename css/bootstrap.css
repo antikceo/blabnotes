@@ -289,7 +289,6 @@ a:focus {
 [class*="span"] {
   float: left;
   min-height: 1px;
-  margin-left: 20px;
 }
 
 .container,
@@ -341,7 +340,7 @@ a:focus {
 }
 
 .span4 {
-  width: 300px;
+  width: 23%;
 }
 
 .span3 {
@@ -7077,7 +7076,7 @@ a.badge:focus {
     min-height: 40px;
     text-align: left;
     vertical-align: top;
-    margin-top: 25px;
+    margin: 30px 5px 10px 5px;
   }
   #headline {
     font-size: 40px;
@@ -7114,7 +7113,7 @@ a.badge:focus {
   
 .paper {
     font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
-    width: 780px;
+    width: 50%;
     /*
     margin: 0 auto 10px;
     padding: 6px 5px 4px 42px;
