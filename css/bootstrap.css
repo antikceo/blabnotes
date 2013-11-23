@@ -7112,7 +7112,7 @@ a.badge:focus {
 
   
 .paper {
-    font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;
+    /*font: normal 12px/1.5 "Lucida Grande", arial, sans-serif;*/
     width: 50%;
     /*
     margin: 0 auto 10px;
