@@ -6,6 +6,14 @@
 </head>
 
 <body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=417996488311990";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
         <div class="spanfull">
             <h1 id="headline" >Blabnotes Transcription with Google Web Speech API</h1>
         </div>
@@ -41,10 +49,11 @@
         
 
         <div class="span4">
+            <div class="fb-like" data-href="http://blabnotes.herokuapp.com" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
             <h3 align="center">Custom Commands</h3>
             <p align="center"><b>"delete last"</b> to delete a word</p>
             <p align="center"><b>"delete all"</b> to clear the canvas</p>
-            <p align="center"><b>"send me somewhere"</b> to open 'Export' dialog</p>
+            <p align="center"><b>"send me away"</b> to open 'Export' dialog</p>
             <p align="center"><b>"stop listening"</b> to turn off microphone</p>
         </div>
         

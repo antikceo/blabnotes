@@ -76,7 +76,7 @@ function send() {
   var d = document.getElementById("final_span").innerHTML;
   filepicker.setKey('APmas3oeTFq9dpPBqf47Zz');
   filepicker.store(d, function(a) {
-    filepicker['export'](a, {extension: '.txt', services:['DROPBOX','GOOGLE_DRIVE','COMPUTER','SEND_EMAIL']}, function(a) {
+    filepicker['export'](a, {extension: '.txt', services:['DROPBOX','GOOGLE_DRIVE', 'COMPUTER','SEND_EMAIL']}, function(a) {
     });
   });
 }
