@@ -162,9 +162,9 @@ if (!('webkitSpeechRecognition' in window)) {
         var words = event.results[i][0].transcript;
         
         //create custom commands
-        if (words === " end paragraph") {
+        if (words === " end paragraph" || words === " end paragraph" || words === " in paragraph") {
             words = "<br><br>";
-        }else if (words === " end sentence" || words === " and sentence") {
+        }else if (words === " end sentence" || words === " and sentence"|| words === " in sentence") {
             words = ".";
         }else if (words === " delete last") {
             words = "";
