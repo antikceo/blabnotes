@@ -22,8 +22,8 @@
         <div class="span4">
             <h3 align="center">Custom Commands</h3>
             <p align="center">You can say:</p>
-            <p align="center"><b>"set paragraph"</b> for new line</p>
-            <p align="center"><b>"new sentence"</b> for '.'</p>
+            <p align="center"><b>"end paragraph"</b> for new line</p>
+            <p align="center"><b>"end sentence"</b> for '.'</p>
             <p align="center"><b>"question mark"</b> for '?'</p>
             <p align="center"><b>"comma"</b> for ','</p>
             <p align="center"><b>"insert exclamation"</b> for '!'</p>
@@ -44,7 +44,8 @@
             <h3 align="center">Custom Commands</h3>
             <p align="center"><b>"delete last"</b> to delete a word</p>
             <p align="center"><b>"delete all"</b> to clear the canvas</p>
-            <p align="center"><b>"send me somewhere"</b> to open 'send' dialog</p>
+            <p align="center"><b>"send me somewhere"</b> to open 'Export' dialog</p>
+            <p align="center"><b>"stop listening"</b> to turn off microphone</p>
         </div>
         
         <div class="center">
@@ -53,8 +54,8 @@
               Stop Listening</button>
           </div>
           <div class="sidebyside">
-            <button id="email_button" class="button">
-              Export (Coming Soon)
+            <button onclick="javascript:send();return false;" id="email_button" class="button">
+              Export
             </button>
           </div>
           <p>
@@ -63,5 +64,5 @@
             <p align="center">Built by <a href="https://github.com/antikceo/blabnotes">Tikue Anazodo</a></p></p>
         </div>
         <script src="js/speech.js"></script>
-
+        <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
 </body>

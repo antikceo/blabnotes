@@ -71,6 +71,16 @@ updateCountry();
 select_dialect.selectedIndex = 6;
 document.getElementById("info").innerHTML = "Click Microphone To Begin Dictation. (Only works in Chrome 25+)";
 
+//filepicker
+function send() {
+  var d = document.getElementById("final_span").innerHTML;
+  filepicker.setKey('APmas3oeTFq9dpPBqf47Zz');
+  filepicker.store(d, function(a) {
+    filepicker['export'](a, {extension: '.txt', services:['DROPBOX','GOOGLE_DRIVE','COMPUTER','SEND_EMAIL']}, function(a) {
+    });
+  });
+}
+
 function updateCountry() {
   for (var i = select_dialect.options.length - 1; i >= 0; i--) {
     select_dialect.remove(i);
@@ -152,34 +162,46 @@ if (!('webkitSpeechRecognition' in window)) {
         var words = event.results[i][0].transcript;
         
         //create custom commands
-        if (words === " set paragraph") {
-            words = ".!<br><br>"
-        }else if (words === " new sentence") {
-            words = "."
+        if (words === " end paragraph") {
+            words = "<br><br>";
+        }else if (words === " end sentence" || words === " and sentence") {
+            words = ".";
         }else if (words === " delete last") {
-            words = ""
-            var lastIndex = final_transcript.lastIndexOf(" ")
+            words = "";
+            var lastIndex = final_transcript.lastIndexOf(" ");
             final_transcript = final_transcript.substring(0, lastIndex);
         }else if (words === " delete all") {
-            words = ""
+            words = "";
             final_transcript = ""
         }else if (words === " insert comma" || words === " kama") {
-            words = ","
+            words = ",";
         }else if (words === " insert exclamation") {
-            words = "!"
+            words = "!";
         }else if (words === " start quotes" || words === " start quote" || words === " stock quote") {
-            words = "\""
+            words = "\"";
         }else if (words === " end quotes" || words === " end quote") {
-            words = "\""
+            words = "\"";
         }else if (words === " insert question mark") {
-            words = "?"
+            words = "?";
         }else if (words === " stop listening") {
+            words = "";
             recognition.stop();
-        }else if (words === " send me somewhere") {
+        }else if (words === " send me away" || words === " Send me away") {
+            words = "";
             recognition.stop();
+            send();
         }else {
             //No commands recognized ... do nothing, leave strings as is
         }
+        
+        if (final_transcript.length === 0) {
+          words = words.substr(0,1).toUpperCase() + words.substr(1);          
+        }  
+        
+        if (final_transcript.substr(-2) === ". " || final_transcript.substr(-1) === ".") {
+          words = words.substr(1,1).toUpperCase() + words.substr(2);          
+        }        
+
         
         final_transcript += words;
         
@@ -280,4 +302,6 @@ function showButtons(style) {
   email_button.style.display = style;
   copy_info.style.display = 'none';
   email_info.style.display = 'none';
-}        
+}    
+
+
