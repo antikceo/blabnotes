@@ -162,10 +162,10 @@ if (!('webkitSpeechRecognition' in window)) {
         var words = event.results[i][0].transcript;
         
         //create custom commands
-        if (words === " end paragraph" || words === " and paragraph" || words === " insert paragraph"|| words === " new paragraph") {
+        if (words === " Inzer paragraph" || words === " inzer paragraph" || words === " insert a paragraph" || words === " Insert a paragraph" || words === " insert paragraph"|| words === " Insert paragraph") {
             words = "<br><br>";
         }else if (words === " end sentence" || words === " and sentence"|| words === " in sentence"|| words === " new sentence") {
-            words = ".";
+            words = ". ";
         }else if (words === " delete last") {
             words = "";
             var lastIndex = final_transcript.lastIndexOf(" ");
@@ -174,15 +174,15 @@ if (!('webkitSpeechRecognition' in window)) {
             words = "";
             final_transcript = ""
         }else if (words === " insert comma" || words === " kama") {
-            words = ",";
+            words = ", ";
         }else if (words === " insert exclamation") {
-            words = "!";
+            words = "! ";
         }else if (words === " start quotes" || words === " start quote" || words === " stock quote") {
             words = "\"";
         }else if (words === " end quotes" || words === " end quote") {
             words = "\"";
         }else if (words === " insert question mark") {
-            words = "?";
+            words = "? ";
         }else if (words === " stop listening") {
             words = "";
             recognition.stop();
