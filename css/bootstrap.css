@@ -232,9 +232,10 @@ body {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 20px;
-  color: #fff;
-  background-color: #39565E;
+  color: #C2A3A3;
+  background-color: #C2A3A3;
   background-image: url('http://oazi.net/wp-content/uploads/2013/05/wood-flooring-99.jpg');
+  
 }
 
 a {
@@ -340,7 +341,7 @@ a:focus {
 }
 
 .span4 {
-  width: 23%;
+  width: 22%;
 }
 
 .span3 {
@@ -757,7 +758,7 @@ h6 {
   font-family: inherit;
   font-weight: bold;
   line-height: 20px;
-  color: #fff;
+  color: #DDC5C5;
   text-rendering: optimizelegibility;
 }
 
@@ -7027,14 +7028,14 @@ a.badge:focus {
     font-family: Verdana, Arial, sans-serif;
   }
   a:link {
-    color:#000;
+    color:#AA8E69;
     text-decoration: none;
   }
   a:visited {
-    color:#000;
+    color:#AA8E69;
   }
   a:hover {
-    color:#33F;
+    color:#AD4040;;
   }
   .button {
     background: -webkit-linear-gradient(top,#008dfd 0,#0370ea 100%);

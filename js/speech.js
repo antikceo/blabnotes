@@ -152,12 +152,33 @@ if (!('webkitSpeechRecognition' in window)) {
         var words = event.results[i][0].transcript;
         
         //create custom commands
-        if (words == " insert paragraph") {
-            words = ".<br><br>"
-        }else if (words == " new sentence") {
+        if (words === " set paragraph") {
+            words = ".!<br><br>"
+        }else if (words === " new sentence") {
             words = "."
+        }else if (words === " delete last") {
+            words = ""
+            var lastIndex = final_transcript.lastIndexOf(" ")
+            final_transcript = final_transcript.substring(0, lastIndex);
+        }else if (words === " delete all") {
+            words = ""
+            final_transcript = ""
+        }else if (words === " insert comma" || words === " kama") {
+            words = ","
+        }else if (words === " insert exclamation") {
+            words = "!"
+        }else if (words === " start quotes" || words === " start quote" || words === " stock quote") {
+            words = "\""
+        }else if (words === " end quotes" || words === " end quote") {
+            words = "\""
+        }else if (words === " insert question mark") {
+            words = "?"
+        }else if (words === " stop listening") {
+            recognition.stop();
+        }else if (words === " send me somewhere") {
+            recognition.stop();
         }else {
-            //No commands reconized ... do nothing, leave strings as is
+            //No commands recognized ... do nothing, leave strings as is
         }
         
         final_transcript += words;
