@@ -156,7 +156,7 @@ if (!('webkitSpeechRecognition' in window)) {
   };
 
   recognition.onresult = function(event) {
-    final_transcript = final_span.innerHTML;
+    
     var interim_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
@@ -187,7 +187,7 @@ if (!('webkitSpeechRecognition' in window)) {
         }else if (words === " stop listening") {
             words = "";
             recognition.stop();
-        }else if (words === " send me away" || words === " Send me away") {
+        }else if (words === " send now" || words === " Send no") {
             words = "";
             recognition.stop();
             send();
@@ -203,7 +203,7 @@ if (!('webkitSpeechRecognition' in window)) {
           words = words.substr(1,1).toUpperCase() + words.substr(2);          
         }        
 
-        
+        final_transcript = final_span.innerHTML;
         final_transcript += words;
         
       } else {
