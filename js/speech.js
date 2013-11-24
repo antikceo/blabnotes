@@ -156,6 +156,7 @@ if (!('webkitSpeechRecognition' in window)) {
   };
 
   recognition.onresult = function(event) {
+    final_transcript = final_span.innerHTML;
     var interim_transcript = '';
     for (var i = event.resultIndex; i < event.results.length; ++i) {
       if (event.results[i].isFinal) {
@@ -218,6 +219,9 @@ if (!('webkitSpeechRecognition' in window)) {
   };
 }
 
+function update_final(){
+    final_transcript = final_span.innerHTML;
+}
    
 function upgrade() {
   start_button.style.visibility = 'hidden';
